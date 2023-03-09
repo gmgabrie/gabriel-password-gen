@@ -1,0 +1,24 @@
+//variables for password length, uppercase, lowercase, numeric, special characters
+
+//array of options for each
+var generatePassword = function () {
+
+//User clicks button to generate password
+
+//Prompt for password length (8-128 characters)
+
+//Prompt for upper case characters
+
+//Prompt for lower case characters
+
+//Prompt for numeric characters
+
+//Prompt for special characters " !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
+
+//Validate that at least one input type is selected
+
+//Password is generated that matches criteria
+
+//Password is displayed in an alert or written to the page
+
+//option to copy to clipboard
