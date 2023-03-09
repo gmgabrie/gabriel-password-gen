@@ -17,13 +17,18 @@ var inputLowerCase
 // Initial prompt for number of characters in password
 function generatePassword() {
   var inputLength = (prompt("How many characters do you want (between 8 - 128)?"));
-  
+
+// Validate that length is not blank  
   while(!inputLength) {alert("Password length cannot be blank!");
+  var inputLength = (prompt("How many characters do you want (between 8 - 128)?"));
+  
+// Validate that input is between 8 and 128
+  while(inputLength < 8 || inputLength > 128) {alert("Password length must be between 8 and 128!");
   var inputLength = (prompt("How many characters do you want (between 8 - 128)?"));
 }
 }
-  // else if (inputLength < 8 || inputLength > 128) {
-  //   inputLength = prompt("Please enter a value between 8 and 128:");
+}
+
   
 
 
