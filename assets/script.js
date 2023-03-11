@@ -31,19 +31,20 @@ function generatePassword() {
 }
 
 // Confirm character types via confirmation prompts
-var inputSpecialChar = confirm("Press OK if you would like to include special characters");
-var inputNumericChar = confirm("Press OK if you would like to include numeric characters");
-var inputUpperCase = confirm("Press OK if you would like to include Upper Case characters");
-var inputLowerCase = confirm("Press OK if you would like to include lower case characters");
+var inputSpecialChar = confirm("Press OK if you would like to include SPECIAL CHARACTERS:");
+var inputNumericChar = confirm("Press OK if you would like to include NUMERIC CHARACTERS:");
+var inputUpperCase = confirm("Press OK if you would like to include UPPER CASE CHARACTERS:");
+var inputLowerCase = confirm("Press OK if you would like to include LOWER CASE CHARACTERS:");
 
+//validtion to make sure that a least one character type is confirmed
   while(inputSpecialChar === false && inputNumericChar === false && inputUpperCase === false && inputLowerCase === false) 
   {alert("You must confirm at least one character choice!");
-  var inputSpecialChar = confirm("Press OK if you would like to include special characters");
-  var inputNumericChar = confirm("Press OK if you would like to include numeric characters");
-  var inputUpperCase = confirm("Press OK if you would like to include Upper Case characters");
-  var inputLowerCase = confirm("Press OK if you would like to include lower case characters");
+  var inputSpecialChar = confirm("Press OK if you would like to include SPECIAL CHARACTERS:");
+  var inputNumericChar = confirm("Press OK if you would like to include NUMERIC CHARACTERS:");
+  var inputUpperCase = confirm("Press OK if you would like to include UPPER CASE CHARACTERS:");
+  var inputLowerCase = confirm("Press OK if you would like to include LOWER CASE CHARACTERS:");
 }
-
+// contstruction of password based on character types confirmed
 var passwordChars = [];
 
 if (inputSpecialChar) {
@@ -58,10 +59,11 @@ if (inputUpperCase) {
 if (inputLowerCase) {
   passwordChars = passwordChars.concat(alphaLower)
 }
-console.log(passwordChars)
+// console.log(passwordChars)
 
+// declare variable for generated password
 var createdPassword = ""
-      
+//function to create password using random characters     
 for (var i = 0; i < inputLength; i++) {
   createdPassword = createdPassword + passwordChars[Math.floor(Math.random() * passwordChars.length)];
   console.log(createdPassword)
@@ -77,6 +79,8 @@ function writePassword() {
 
   passwordText.value = password;
 }
+
+//function to copy password to clipboard
 function copyPassword() {
  var pwc = document.querySelector("textarea").select();
     console.log(pwc)

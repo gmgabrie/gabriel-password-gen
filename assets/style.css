@@ -12,17 +12,20 @@ body,
   padding: 0;
 }
 
+/* body background color and font family */
 body {
   font-family: sans-serif;
   background-color: #BFACE2;
 }
 
+/* wrapper class padding properties */
 .wrapper {
   padding-top: 30px;
   padding-left: 20px;
   padding-right: 20px;
 }
 
+/* header properties */
 header {
   text-align: center;
   padding: 20px;
@@ -31,8 +34,8 @@ header {
   font-size: 22px;
 }
 
+/* card class properties */
 .card {
-  /* background-color: hsl(0, 0%, 100%); */
   background-color: #ECF2FF;
   border-radius: 5px;
   border-width: 1px;
@@ -74,6 +77,7 @@ header {
   clear: both;
 }
 
+/* button properties */
 .btn {
   border: none;
   /* background-color: hsl(360, 91%, 36%); */
@@ -100,6 +104,7 @@ button[disabled] {
   float: right;
 }
 
+/* properties of text area where password is displayed */
 #password {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -119,8 +124,10 @@ button[disabled] {
   border-radius: 6px;
   resize: none;
   overflow: hidden;
+  color: #3A1078;
 }
 
+/* media queries for various screen sizes */
 @media (max-width: 690px) {
   .btn {
     font-size: 1rem;
