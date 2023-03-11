@@ -28,3 +28,4 @@ I utilized several external sources to help with development of this application
 - input validation for password length and types of characters.
 - copy to clipboard button.
 - event listener functions for generate password and copy to clipboard buttons.
+- raise effect on two buttons on hover
