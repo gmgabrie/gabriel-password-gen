@@ -1,5 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var copyBtn = document.querySelector("#copypw");
 
 // Arrays for character options per criteria
 var number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
@@ -21,16 +22,53 @@ function generatePassword() {
 // Validate that length is not blank  
   while(!inputLength) {alert("Password length cannot be blank!");
   var inputLength = (prompt("How many characters do you want (between 8 - 128)?"));
-  
+
 // Validate that input is between 8 and 128
   while(inputLength < 8 || inputLength > 128) {alert("Password length must be between 8 and 128!");
   var inputLength = (prompt("How many characters do you want (between 8 - 128)?"));
-}
+  console.log(inputLength);
 }
 }
 
-  
+// Confirm character types via confirmation prompts
+var inputSpecialChar = confirm("Press OK if you would like to include special characters");
+var inputNumericChar = confirm("Press OK if you would like to include numeric characters");
+var inputUpperCase = confirm("Press OK if you would like to include Upper Case characters");
+var inputLowerCase = confirm("Press OK if you would like to include lower case characters");
 
+  while(inputSpecialChar === false && inputNumericChar === false && inputUpperCase === false && inputLowerCase === false) 
+  {alert("You must confirm at least one character choice!");
+  var inputSpecialChar = confirm("Press OK if you would like to include special characters");
+  var inputNumericChar = confirm("Press OK if you would like to include numeric characters");
+  var inputUpperCase = confirm("Press OK if you would like to include Upper Case characters");
+  var inputLowerCase = confirm("Press OK if you would like to include lower case characters");
+}
+
+var passwordChars = [];
+
+if (inputSpecialChar) {
+  passwordChars = passwordChars.concat(specialCharacter)
+}
+if (inputNumericChar) {
+  passwordChars = passwordChars.concat(number)
+}
+if (inputUpperCase) {
+  passwordChars = passwordChars.concat(alphaUpper)
+}
+if (inputLowerCase) {
+  passwordChars = passwordChars.concat(alphaLower)
+}
+console.log(passwordChars)
+
+var createdPassword = ""
+      
+for (var i = 0; i < inputLength; i++) {
+  createdPassword = createdPassword + passwordChars[Math.floor(Math.random() * passwordChars.length)];
+  console.log(createdPassword)
+}
+return createdPassword;
+
+}
 
 // Write password to the #password input
 function writePassword() {
@@ -38,8 +76,15 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
+function copyPassword() {
+ var pwc = document.querySelector("textarea").select();
+    console.log(pwc)
+    document.execCommand('copy');
+    alert('Password copied to Clipboard!');
+}
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+copyBtn.addEventListener("click", copyPassword);
