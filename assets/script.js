@@ -19,15 +19,10 @@ var inputLowerCase
 function generatePassword() {
   var inputLength = (prompt("How many characters do you want (between 8 - 128)?"));
 
-// Validate that length is not blank  
-  while(!inputLength) {alert("Password length cannot be blank!");
-  var inputLength = (prompt("How many characters do you want (between 8 - 128)?"));
-
 // Validate that input is between 8 and 128
-  while(inputLength < 8 || inputLength > 128) {alert("Password length must be between 8 and 128!");
-  var inputLength = (prompt("How many characters do you want (between 8 - 128)?"));
-  console.log(inputLength);
-}
+while(inputLength < 8 || inputLength > 128) {alert("Password length must be between 8 and 128!");
+var inputLength = (prompt("How many characters do you want (between 8 - 128)?"));
+console.log(inputLength);
 }
 
 // Confirm character types via confirmation prompts
@@ -62,7 +57,7 @@ if (inputLowerCase) {
 // console.log(passwordChars)
 
 // declare variable for generated password
-var createdPassword = ""
+var createdPassword = "" 
 //function to create password using random characters     
 for (var i = 0; i < inputLength; i++) {
   createdPassword = createdPassword + passwordChars[Math.floor(Math.random() * passwordChars.length)];
